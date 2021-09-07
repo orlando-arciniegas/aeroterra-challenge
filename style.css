@@ -1,0 +1,39 @@
+body {
+    margin: 0;
+}
+
+#map {
+    height: 100vh;
+    width: 100vw;
+}
+
+.controls {
+    border-bottom: 2px solid white;
+}
+
+.toggleDiv {
+    display: none;
+    transition: all 2s;
+}
+
+#form{
+    position: fixed;
+    top: 1em;
+    left: 6em;
+    padding: 5px;
+    border-radius: 10px;
+    max-width: 250px;
+    background-color: rgb(194, 194, 194);
+}
+
+#marker {
+    background-size: cover;
+    width: 6em;
+    height: 3em;
+    border-radius: 50%;
+    cursor: pointer;
+}
+     
+mapboxgl-popup {
+    max-width: 200px;
+}

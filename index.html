@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- Link to Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <!-- Link to FontAwesome Icons -->
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <!-- Link to CSS file -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Link to Mapbox GL JS -->
+    <script src='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css' rel='stylesheet' />
+    <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.1.0/mapbox-gl-directions.js">
+    </script>
+    <link rel="stylesheet"
+        href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.1.0/mapbox-gl-directions.css"
+        type="text/css" />
+    <title>Aeroterra</title>
+</head>
+
+<body>
+    <div id='map'></div>
+
+    <form method="POST" id="form">
+        <div class="mb-3 controls">
+            <label for="controls" class="form-label">Controles:</label>
+            <button class="btn" type="button" id="getPosition"><i class="fal fa-crosshairs fa-2x" style="color: #092d7a"></i></button>
+            <button class="btn" type="button" id="toggleControl"><i class="fas fa-map-marker-plus fa-2x" style="color:#198754"></i></button>
+        </div>
+        <div id="divToHidden" class="toggleDiv">
+        <div class="mb-3">
+            <label for="description" class="form-label">Descripción</label>
+            <input type="text" class="form-control" id="description" aria-describedby="description" placeholder="Nombre o descripción">
+            <div id="msgAlert" class="form-text"></div>
+        </div>
+        <div class="mb-3">
+            <label for="direction" class="form-label">Dirección</label>
+            <input type="text" class="form-control" id="direction" placeholder="Dirección, ej: Av. Eduardo Madero 1020">
+        </div>
+        <div class="mb-3">
+            <label for="phone" class="form-label">Telefono</label>
+            <input type="text" class="form-control" id="phone" aria-describedby="phone" placeholder="Telefono, ej: 54 9 1234 5678">
+            <div id="msgAlert" class="form-text"></div>
+        </div>
+        <div class="mb-3">
+            <label for="category" class="form-label">Categoria</label>
+            <select class="form-select" aria-label="Default select" id="category">
+                <option selected disabled>Seleccionar:</option>
+                <option value="comercial">Comercial</option>
+                <option value="residencial">Residencial</option>
+                <option value="mixta">Mixta</option>
+            </select>
+            <div id="msgAlert" class="form-text"></div>
+        </div>
+        <div class="mb-3">
+            <label for="coords" class="form-label">Coordenadas</label>
+            <div class="input-group">
+                <input type="text" aria-label="longitude" id="longitude" class="form-control" placeholder="Longitud">
+                <input type="text" aria-label="latitude" id="latitude" class="form-control" placeholder="Latitud">
+            </div>
+            <div id="msgAlert" class="form-text"></div>
+        </div>
+        <div class="d-grid gap-2">
+            <button class="btn btn-success" type="submit">Agregar <i class="fas fa-plus-circle"></i></button>
+        </div>
+        </div>
+    </form>
+
+    <!-- Link to JS file -->
+    <script src="main.js" defer></script>
+</body>
+
+</html>
